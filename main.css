@@ -14,6 +14,17 @@ body {
    width: 100%;
 }
 
+a.navlink {
+   text-decoration: none;
+   font-size: small;
+   font-weight: 550;
+   color: #000000;
+}
+
+a.navlink:hover {
+    text-decoration: underline;
+}
+
 .topright {
    position: absolute;
    top: 10px;
