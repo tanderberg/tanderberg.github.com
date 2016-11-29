@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang='en-us'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shouting down research</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link rel="stylesheet" href="../css/main.css">
+  </head>
+  <body>
+    <div class="header">
+        <h1>Shouting down research</h1>
+    </div>
+    <div class="content">
+<p>
+Two researchers at Shanghai Jiao Tong University recently posted a <a href="https://arxiv.org/abs/1611.04135" target="_blank">paper</a> 
+which quickly garnered the attention of the online commentariat, some fairly 
+<a href="https://www.technologyreview.com/s/602955/neural-network-learns-to-identify-criminals-by-their-faces/" target="_blank">balanced</a>
+and some like <a href="http://eepurl.com/cpBiBT" target="_blank">this</a>:
+</p>
+<blockquote cite="http://eepurl.com/cpBiBT">
+  <p><strong>From the department of: I Really Hope This Is Satire, but Given It Is 2016 I Cannot Be Sure:</strong>
+  Researchers at Shanghai University published a paper called ‘automated inference on criminality using face images‘. 
+  The paper uses deep learning to explore correlations between someone’s appearance and the chance of them being a 
+  criminal. It’s modern phrenology – 19th century junk science where people believed you could measure someone’s skull 
+  and use it to infer traits about their intelligence (the Nazi’s were influenced by this). I can see no merit to this 
+  paper whatsoever and am mystified that the researchers were not warned off of publishing this absurd paper. If someone 
+  feels my views are wildly wrong here I’d love to hear from you and will (if you’re comfortable with it) put the 
+  correspondence in the next newsletter.
+  </p>
+</blockquote>
+<p>
+The Nazi-laden denunciation above landed in my mailbox on November 21, courtesy of 
+<a href="https://jack-clark.net/import-ai/" target="_blank">Import AI</a>, "a weekly newsletter about artificial intelligence, 
+read by thousands of experts", written by Jack Clark, 
+<a href="https://openai.com/blog/team-update-august/" target="_blank">Strategy and Communications Director</a> at 
+<a href="https://openai.com/about/" target="_blank">OpenAI</a>. Given the considerable cachet of OpenAI, the wide distribution 
+of this newsletter throughout the AI community, the strength of the language used, and its likely impact on the paper's authors
+(whom I do not know and am in no way associated with), I decided to spend the time needed to respond properly, and did so on 
+November 23. My reply, including my permission to include it in the newsletter, was backquoted and acknowledged in private on 
+November 27. On November 29, after an unusual delay of one day (the newsletter is normally sent out on Mondays), the 
+<a href="http://eepurl.com/cqTBkD" target="_blank">week's issue of Import AI</a> appeared, having only this to say about the 
+exchange:
+</p>
+<blockquote cite="http://eepurl.com/cqTBkD">
+  <p><strong>Ethical machine learning</strong>: should we conduct experiments, even if they seem to be offensive? The answer to 
+  that question was 'yes' from a few Import AI readers, who took issue with my characterization of the 'automated inference on 
+  criminality using face images' paper from last week. Some readers pointed out that this could be an interesting experiment to 
+  run, and I countered by saying I'd need a much larger section of the research paper given over to an evaluation of the ethical 
+  and moral context of the experiment.
+</p>
+</blockquote>
+<p>
+Since this is obviously not how you "put the correspondence in the next newsletter", I conclude that OpenAI's Strategy and 
+Communications Director has decided to renege on his offer. As I am no more a fan of broken promises and of wasted time than 
+of rants from a bully pulpit associated with an organization which I had previously seen no reason to disrespect, I am posting 
+my response for all to see, and I encourage the other readers of Import AI who've had their replies suppressed to do the same.
+</p>
+<p>
+My original response, with markup added for readability and titles replacing raw URLs in the reference list but otherwise 
+unchanged, follows below.
+</p>
+		<div align="right">
+			<br>
+			<div>Tommy Anderberg</div>
+			<div>November 29, 2016</div>
+		</div>
+
+		<h2 class="content-subhead">"From the department of: I Really Hope This Is Satire, but Given It Is 2016 I Cannot Be Sure"</h2>
+<p>
+It's been a while since I last got in trouble for something I wrote. Looks like it's time again.
+</p>
+
+<p>
+First, I would like to express my appreciation for OpenAI in general and your newsletter in particular. I would not bother 
+to respond if I considered you easily disregarded.
+</p>
+
+<p>
+That said...
+</p>
+
+<p>
+Your critique of <a href="#[1]">[1]</a> does not contain a single word about the scientific plausibility of the claimed correlations, 
+nor about the paper's methodology. The Godwin-defying analogies you put forth do not touch upon the validity of the paper's findings; 
+they are all about what you fear that they will lead to, namely facial profiling (that's a fancy term I just came up with by obvious 
+substitution <a href="#[2]">[2]</a>).
+</p>
+
+<p>
+I hold the following truth to be self-evident: science is about how the world is, not about how we wish it were. To get the two 
+mixed up is to live in a fantasy, and that does not usually lead to good outcomes. It is an error to reject a finding because we 
+don't like its implications, and it is an error to suppress a finding for fear that it might be misunderstood by others. That would 
+mean letting science be hostage to (presumed) stupid people. Go down that road and the unreflected knee-jerk reactions and jumping 
+to conclusions which you fear from others become your own.
+</p>
+
+<p>
+When confronted with a troubling research result, I think it is helpful to slow down and ask the following questions:
+	<ul>
+		<li><strong>Q.1)</strong> <a href="#A.1">Is it plausible that things might work this way?</a></li>
+		<li><strong>Q.2)</strong> <a href="#A.2">Have all possible explanations been considered?</a></li>
+		<li><strong>Q.3)</strong> <a href="#A.3">If this really is how things work, what can we do about it?</a></li>
+	</ul>
+Here are my answers with regard to <a href="#[1]">[1]</a>:
+</p>
+
+<p>
+<strong><a name="A.1">A.1)</a></strong> Yes. Correlations between behavior and genetically determined physical features are not only 
+plausible, they are already well documented.
+</p>
+
+<p>
+Let's say I present you with a set of face images, and tell you only this: "half of these people are murderers; identify them". You 
+look at the photos and notice that half of them are men, half are women. Without any additional information, all you have to go on 
+is the known fact that 95% of homicide perpetrators worldwide are men <a href="#[3]">[3]</a>. No matter how much you dislike this 
+fact (as a man, I certainly do) you should pick the men as your primary suspects.
+</p>
+
+<p>
+You know this, so you already know that a genetically determined attribute - gender - is strongly correlated with violent crime. It 
+would be surprising if no other correlations were to be found between genetically determined attributes and behavior. Two well known 
+examples of such correlations are digit ratios (the ratio of index finger length to ring finger length) and facial width-to-height 
+ratios (fWHR): low digit ratios and wide faces tend to accompany high testosterone levels and are predictive of stereotypically male 
+(aggressive, dominant, driving, status-striving) personality 
+<a href="#[4]">[4]</a><a href="#[5]">[5]</a><a href="#[6]">[6]</a><a href="#[7]">[7]</a><a href="#[8]">[8]</a><a href="#[9]">[9]</a><a href="#[10]">[10]</a>. 
+Depending on context and other traits, this kind of personality can lead to success in sports and business - or to jail.
+</p>
+
+<p>
+<strong><a name="A.2">A.2)</a></strong> In the present case, this question should really be asked of the reader. The authors of 
+<a href="#[1]">[1]</a> only establish a correlation, not what causes it.
+</p>
+
+<p>
+A reader may jump to - or fear - the conclusion that people with certain facial features are genetically predisposed to become 
+criminals, but there are other possibilities. 
+</p>
+
+<p>
+Look at the three discriminative features identified in Fig. 4b: they make the face look more determined or prying (the eyes), 
+less smiling (smaller mouth) and more judgemental or angry (pursed lips). The "normal" face of Fig, 4a is noticeably more relaxed. 
+(The same is true of Fig. 6 a and c versus b and d. The authors claim that they "appear hardly distinguishable"; I disagree.)
+</p>
+
+<p>
+Now make a simple thought experiment. Take two twins, identical in everything except for their faces. Twin A has the face of Fig. 4a, 
+twin B has the face of Fig. 4b (or, if you prefer, one of the faces of Fig. 9a). As they go through life, everybody they interact with 
+is going to perceive A as more relaxed and friendly than B, quite independently of their (identical) personality. In most cases it's 
+not going to be a reasoned assessment, just a feeling, maybe not even a conscious one. It takes you less than one tenth of a second to 
+attribute character traits to a new face, and you do it automatically, whether you want to or not <a href="#[11]">[11]</a>. The effect 
+is known to be real and deeply influential: it can determine who gets a loan, goes to jail, becomes CEO or wins a political election 
+<a href="#[12]">[12]</a><a href="#[13]">[13]</a><a href="#[14]">[14]</a><a href="#[15]">[15]</a><a href="#[16]">[16]</a> (see 
+<a href="#[17]">[17]</a> for a nice summary, also featuring twins).
+</p>
+
+<p>
+So in a very real sense, facial profiling is something we already do. We have always done it.
+</p>
+
+<p>
+Remember the old saying "smile and the world smiles with you"? In our thought experiment, A is going to have a better time than B, even 
+if B never changes. But inevitably, B will change. Being persistently perceived and treated as not so nice will make him just that. And 
+should the resulting coarsening of his personality eventually cause a run-in with the law, his looks alone will make him more likely to 
+be convicted than A would have been.
+</p>
+
+<p>
+Incidentally, I didn't notice any outcry when CSAIL presented its large-scale image memorability estimator <a href="#[18]">[18]</a> and 
+MarketWatch used it to show that well known CEOs have highly memorable faces <a href="#[19]">[19]</a>. Here's a hunch: these CEOs would 
+also score highly for "criminality" according to <a href="#[1]">[1]</a>, because it is deviations from the norm that makes a face memorable. 
+And I say this as someone whose photo scores even higher than Zuckerberg's for memorability, and therefore, presumably, for crookedness.
+</p>
+
+<p>
+<strong><a name="A.3">A.3)</a></strong> Whether genetic predisposition, social stigma due to unfortunate looks or something else is behind 
+the findings of <a href="#[1]">[1]</a>, it would be preposterous to conclude that all people with "criminal" faces should be preemptively 
+incriminated. Note again that the authors suggest no such thing; what I am addressing here is the fear of such suggestions which I expect 
+to be invoked as an argument against pursuing this line of inquiry.
+</p>
+
+<p>
+To suggest such things one must of course fail at elementary logic; one must believe that the statement "all idiots are conservatives" 
+implies that all conservatives are idiots, or equivalently that the statement "all suicide bombers are Muslims" (if it were true <a href="#[20]">[20]</a>) 
+would imply that all Muslims are suicide bombers. The resounding condemnation and quick shelving of recently vented political proposals 
+related to the second example was a mild breeze compared to the storm of indignation which would greet the policing of those whose only 
+"crime" is a face deemed deviant by computers.
+</p>
+
+<p>
+Could something good come of this? Quite possibly. Remember, the CNN of <a href="#[1]">[1]</a> is doing what you and I have been doing 
+all our lives. Yes, it is terrible that we use facial features to judge each others character, but that's what we are hardwired to do. 
+Denying this reality might make some people feel better about themselves, but it will not help those of us who are most at risk from its 
+consequences. So let's admit it, and let's ponder how an impartial judge of risky looks might be put to good use. Maybe it could gently 
+remind us to be a little nicer to those who would be most helped by it?
+</p>
+
+		<div align="right">
+			<br>
+			<div>Tommy Anderberg</div>
+			<div>November 23, 2016</div>
+		</div>
+
+<p>
+P.S. While I am comfortable with this text being put in the newsletter, I would strongly prefer that my email address not be included.
+</p>
+
+<p><a name="[1]">[1]</a> <a href="https://arxiv.org/abs/1611.04135" target="_blank">[1611.04135] Automated Inference on Criminality using Face Images</a></p>
+<p><a name="[2]">[2]</a> <a href="https://www.aclu.org/issues/racial-justice/race-and-criminal-justice/racial-profiling" target="_blank">Racial Profiling | American Civil Liberties Union</a></p>
+<p><a name="[3]">[3]</a> <a href="https://www.unodc.org/gsh/" target="_blank">Global Study on Homicide | UNODC</a></p>
+<p><a name="[4]">[4]</a> <a href="https://dx.doi.org/10.1016/j.injury.2013.07.018" target="_blank">Second to fourth digit ratio confirms aggressive tendencies in patients with boxers fractures</a></p>
+<p><a name="[5]">[5]</a> <a href="https://dx.doi.org/10.1002%2Fajhb.22718" target="_blank">Digit ratio (2D:4D), aggression, and dominance in the Hadza and the Datoga of Tanzania</a></p>
+<p><a name="[6]">[6]</a> <a href="https://dx.doi.org/10.1098/rspb.2008.0873" target="_blank">In your face: facial metrics predict aggressive behaviour in the laboratory and in varsity and professional hockey players</a></p>
+<p><a name="[7]">[7]</a> <a href="https://dx.doi.org/10.1016/j.paid.2011.12.030" target="_blank">Facial width-to-height ratio predicts achievement drive in US presidents</a></p>
+<p><a name="[8]">[8]</a> <a href="https://dx.doi.org/10.1016/j.evolhumbehav.2013.03.005" target="_blank">Telling facial metrics: facial width is associated with testosterone levels in men</a></p>
+<p><a name="[9]">[9]</a> <a href="https://dx.doi.org/10.1007/s40750-014-0003-3" target="_blank">An Examination of the Associations Between Facial Structure, Aggressive Behavior, and Performance in the 2010 World Cup Association Football Players</a></p>
+<p><a name="[10]">[10]</a> <a href="https://dx.doi.org/10.1371%2Fjournal.pone.0122637" target="_blank">Men’s Facial Width-to-Height Ratio Predicts Aggression: A Meta-Analysis</a></p>
+<p><a name="[11]">[11]</a> <a href="https://dx.doi.org/10.1177/0956797614523297" target="_blank">Inferring Character From Faces</a></p>
+<p><a name="[12]">[12]</a> <a href="https://dx.doi.org/10.1073/pnas.0705435104" target="_blank">Predicting political elections from rapid and unreflective face judgments</a></p>
+<p><a name="[13]">[13]</a> <a href="https://dx.doi.org/10.1080/10683160902926141" target="_blank">Dangerous decisions: the impact of first impressions of trustworthiness on the evaluation of legal evidence and defendant culpability</a></p>
+<p><a name="[14]">[14]</a> <a href="https://dx.doi.org/10.1371/journal.pone.0034293" target="_blank">Unfakeable Facial Configurations Affect Strategic Choices in Trust Games with or without Information about Past Behavior</a></p>
+<p><a name="[15]">[15]</a> <a href="https://dx.doi.org/10.2139/ssrn.1571469" target="_blank">A Corporate Beauty Contest</a></p>
+<p><a name="[16]">[16]</a> <a href="https://dx.doi.org/10.1016/j.tics.2014.09.007" target="_blank">Social attributions from faces bias human choices</a></p>
+<p><a name="[17]">[17]</a> <a href="http://www.bbc.com/future/story/20150707-is-faceism-spoiling-your-life" target="_blank">Is 'face-ism' spoiling your life? | BBC Future</a></p>
+<p><a name="[18]">[18]</a> <a href="http://memorability.csail.mit.edu/" target="_blank">Large-scale Image Memorability | CSAIL</a></p>
+<p><a name="[19]">[19]</a> <a href="http://www.marketwatch.com/story/mit-research-analyzing-faces-may-explain-why-these-ceos-are-successful-2015-06-11" target="_blank">MIT research analyzing faces may explain why these CEOs are successful | MarketWatch</a></p>
+<p><a name="[20]">[20]</a> <a href="http://www.timesofisrael.com/450-of-452-suicide-attacks-in-2015-were-by-muslim-extremists-study-shows/" target="_blank">450 of 452 suicide attacks in 2015 were by Muslim extremists, study shows | The Times of Israel</a></p>
