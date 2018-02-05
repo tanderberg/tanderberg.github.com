@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang='en-us'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypergrid to Go</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/base-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-min.css">
+    <link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/grid.css">
+  </head>
+  <body>
+    <div class="header">
+        <h1>Hypergrid to Go</h1>
+    </div>
+    <div class="content">
+        <p>Hypergrid to Go is a <a href="http://opensimulator.org/wiki/Hypergrid" target="_blank">Hypergrid</a>-enabled 
+		<a href="http://opensimulator.org/" target="_blank">OpenSim</a> virtual world server, packaged as a self-contained
+		<a href="https://wikipedia.org/wiki/Virtual_appliance" target="_blank">virtual appliance</a>. With OpenSim, you can 
+		create a multi-user 3D world similar to 
+		<a href="http://secondlife.com/" target="_blank">Second Life</a>. Hypergrid connectivity lets users jump (“teleport”)
+		between your server and others. A ready-to-use, fully customizable world and a large asset library are included.</p>
+		
+		<figure class="item">
+            <img src="img/htg_1_900_1_vbox.jpg" alt="Hypergrid to Go: first login">
+			<figcaption>Hypergrid to Go 1.900.1 running in VirtualBox on Windows 10</figcaption>
+        </figure>
+		
+		<p>As explained <a href="why/index.html" target="_blank">here</a>, 
+		I recommend running Hypergrid to Go as a virtual machine in a 
+		<a href="http://en.wikipedia.org/wiki/Hypervisor" target="_blank">hypervisor</a> like 
+        <a href="https://www.virtualbox.org/" target="_blank">VirtualBox</a> or
+		<a href="https://www.qemu.org/" target="_blank">QEMU</a> (both freely available for Windows, Mac and Linux), 
+        <a href="https://www.vmware.com/go/tryplayer" target="_blank">VMware Workstation Player</a> (Windows, Linux) or
+		<a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/" target="_blank">Hyper-V</a> 
+		(Windows).</p>
+		
+		<h2 class="content-subhead">Download</h2>
+		
+		<p>Hypergrid to Go is distributed as a raw disk image (.raw) which can be converted to a variety of virtual disk 
+		formats.</p>
+		
+		<p>You can download an <a href="https://en.wikipedia.org/wiki/Xz" target="_blank">xz-compressed</a> archive of the image 
+		(.raw.xz) <a href="https://download.opensuse.org/repositories/home:/Tommy_Anderberg/images/Hypergrid-to-Go.x86_64-1.900.1-Build181.1.raw.xz.mirrorlist" target="_blank">here</a>.</p>
+		
+		The current version (1.900.1) is based on <a href="https://www.opensuse.org/" target="_blank">openSUSE</a> Leap 42.3 
+		and OpenSim 0.9.
+		
+		<h2 class="content-subhead">Unpack</h2>
+		
+		<p>Once downloaded, the .raw.xz archive needs to be unpacked. An easy way to do this on Windows, Mac and Linux is with 
+		<a href="http://www.e7z.org/open-xz-txz.htm" target="_blank">e7z</a>. On Windows, you can also use 
+		<a href="http://www.winzip.com/win/en/xz-file.html" target="_blank">WinZip</a>.</p>
+		
+		<p>If you live on the *nix command line, you probably know all about 
+		<a href="https://linux.die.net/man/1/unxz" target="_blank">unxz</a> already; just remember to use the -k modifier if 
+		you want to keep the downloaded .raw.xz file as backup.</p>
+		
+		<h2 class="content-subhead">Convert</h2>		
+		<p>One more step is needed to turn the extracted .raw image into a usable virtual disk. The details depend on your
+		choice of hypervisor.</p>
+		
+		<ul>
+		<li>
+		<p>For <a href="https://www.virtualbox.org/" target="_blank">VirtualBox</a>, use the VBoxManage 
+		<a href="https://www.virtualbox.org/manual/ch08.html#idp47569025281936" target="_blank">convertfromraw</a> 
+		command to create a VDI (VirtualBox Disk Image). To create a disk image called virtualdisk.vdi from a .raw file
+		called downloaded.raw, you would say:
+		<blockquote>VBoxManage convertfromraw downloaded.raw virtualdisk.vdi --format VDI</blockquote>
+		If VBoxManage is not on your path, you will find it in the VirtualBox installation directory 
+		(on Windows, typically "C:\Program Files\Oracle\VirtualBox").</p>
+		</li>
+		
+		<li>
+		<p>For <a href="https://www.vmware.com/go/tryplayer" target="_blank">VMware Workstation Player</a>, you need to create 
+		a VMDK (Virtual Machine Disk). VBoxManage can be used for this conversion too:
+		<blockquote>VBoxManage convertfromraw downloaded.raw virtualdisk.vmdk --format VMDK</blockquote>
+		(VirtualBox can also use VMDKs instead of VDIs).</p>
+		
+		<p>You can also use the qemu-img utility which comes with <a href="https://www.qemu.org/" target="_blank">QEMU</a>:
+		<blockquote>qemu-img convert -f raw downloaded.raw -O vmdk virtualdisk.vmdk</blockquote>
+		If qemu-img is not on your path, you will find it in the QEMU installation directory 
+		(on Windows, typically "C:\Program Files\qemu").</p>
+		</li>
+		
+		<li>
+		<p>For <a href="https://www.qemu.org/" target="_blank">QEMU</a>, create a QCOW2 (QEMU Copy On Write, version 2)
+		disk. Using qemu-img, the command is:
+		<blockquote>qemu-img convert -f raw downloaded.raw -O qcow2 virtualdisk.qcow2</blockquote>
+		QEMU can also use the .raw file as is, but this means wasting several GB of disk space, since .raw
+		images are not dynamically sized; a .raw image of a 16 GB disk is always 16 GB, even when empty.</p>
+		</li>
+		
+		<li>
+		<p>For <a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/" target="_blank">Hyper-V</a>,
+		create a VHDX (Virtual Hard Disk, version 2). This too can be done with qemu-img:
+		<blockquote>qemu-img convert -f raw downloaded.raw -O vhdx virtualdisk.vhdx</blockquote></p>
+		</li>
+		
+		</ul>
+		
+		The .raw image can be deleted once the virtual disk has been created (but do keep the .raw.xz as backup).
+		
+		<h2 class="content-subhead">Mount</h2>
+		
+		<p>Create a new virtual machine for your hypervisor (Machine | New in VirtualBox Manager, 
+		“Create a New Virtual Machine” in VMare Workstation Player etc.) with the following properties:</p>
+		<ul>
+			<li><p>64 bit Linux (openSUSE).</p></li>
+			<li><p>At least 3072 MB of memory, preferably 4096 MB.</p></li>
+			<li><p>If you have a quad core CPU or better, two “processors”.</p></li>
+			<li><p>Bridged Network Adapter (this gives the virtual machine its own address on your local network, 
+			separate from the host's).</p></li>
+		</ul>
+		<p>Do not create a new hard disk (or, if you did, remove it). Instead, choose the option to use an 
+		existing hard disk and select the virtual disk which you created from the downloaded .raw image.</p>
+		
+		<h2 class="content-subhead">Run</h2>
+		
+		<p>...patiently:</p>
+		<ul>
+			<li><p>The first launch takes some time as the virtual machine goes through initial setup. Subsequent launches 
+			are faster.</p></li>
+			<li><p>If you see a login prompt during the boot sequence, ignore it. The machine will autologin to a graphic
+			desktop when ready.</p></li>
+			<li><p>That desktop features a big red button labeled with the words "READ ME FIRST!". Please click it.</p></li>
+			<li><p>The first OpenSim launch is preceded by database unpacking, which takes several minutes. No, it's not
+			stuck! (Watch disk activity for proof.) Do not interrupt it or you will end up with a broken database, and
+			probably have to start over with a fresh virtual machine.</p></li>
+		</ul>
+		
+		<figure class="item">
+            <img src="why/img/htg_login.jpg" alt="Hypergrid to Go: first login">
+			<figcaption>Hypergrid to Go: first login</figcaption>
+        </figure>
+		
+		<p>Have fun!</p>
+        
+        <div align="right">
+            <br>
+            <div>Tommy Anderberg</div>
+            <div>February 5, 2018</div>
+        </div>
+	</div>
+  </body>
+</html>
